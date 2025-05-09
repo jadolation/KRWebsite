@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="494687272_3962775530605296_6904235622736955254_n.jpg" type="image/jpg">
+    <title>To my wife</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-blue-gradient {
+            background: linear-gradient(to bottom, #e0f7fa, #b2ebf2, #81d4fa);
+        }
+        .text-blue-shade {
+            color: #1a237e;
+        }
+        .border-blue-shade {
+            border-color: #1a237e;
+        }
+        .shadow-blue-light {
+            box-shadow: 0 4px 6px rgba(26, 35, 126, 0.1);
+        }
+        .hover\:shadow-blue-md:hover {
+            box-shadow: 0 6px 8px rgba(26, 35, 126, 0.2);
+        }
+        .envelope-button {
+            width: 60px;
+            height: 60px;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%231a237e" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v5l-8 5-8-5V6zm-8 8L4 8h16l-8 6z"%2F%3E%3C/svg%3E');
+            background-size: cover;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .envelope-button:hover {
+            transform: rotateX(-20deg) scale(1.2);
+        }
+        .hidden {
+            display: none;
+        }
+        .letter-content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(26, 35, 126, 0.15);
+            margin-top: 15px;
+            white-space: pre-line;
+            border: 1px solid #1a237e;
+        }
+        #letters-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 35, 126, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        #letters-page .container {
+            padding-top: 0;
+            padding-bottom: 0;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .game-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(26, 35, 126, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #1a237e;
+        }
+        .game-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(26, 35, 126, 0.2);
+        }
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .game-card .content {
+            padding: 15px;
+            background-color: #f5f5f5;
+        }
+        .game-card h3 {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #1a237e;
+            margin-bottom: 5px;
+        }
+        .game-card p {
+            color: #3f51b5;
+        }
+        .section-heading {
+            color: #1a237e;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Flower animation styles */
+        @keyframes flower-tilt {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-5deg);
+            }
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+        .flower {
+            width: 50px; 
+            height: 50px; 
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"%3E%3Cpath fill="%23f06292" d="M256 448c-84.864 0-154.336-62.592-159.872-144h319.744c-5.536 81.408-75.008 144-159.872 144zM506.731 187.419c-5.964-5.886-15.564-5.71-21.314.436L402.133 298.545c-4.13 4.272-10.82 4.272-14.95 0L298.667 187.855c-5.75-6.146-15.35-6.322-21.314-.436-5.964 5.886-5.788 15.486.436 21.314l85.333 88.667c6.826 7.074 17.862 7.074 24.688 0l85.333-88.667c6.224-5.828 6.4-15.428.436-21.314zM488 128H24c-13.255 0-24 10.745-24 24v21.333c0 13.255 10.745 24 24 24h464c13.255 0 24-10.745 24-24V152c0-13.255-10.745-24-24-24z"%3E%3C/path%3E%3C/svg%3E');
+            background-size: cover;
+            animation: flower-tilt 3s infinite; 
+            transform-origin: bottom center; 
+            display: inline-block;
+            margin: 0 10px; 
+        }
+
+
+    </style>
+</head>
+<body class="bg-blue-gradient min-h-screen flex flex-col">
+    <header class="bg-white/90 backdrop-blur-md py-6 shadow-md sticky top-0 z-10 rounded-b-xl border-b border-blue-shade/30">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-semibold text-blue-shade text-center">
+                I love you baby 💙
+            </h1>
+        </div>
+    </header>
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <nav class="mb-10 rounded-lg shadow-md bg-white/90 backdrop-blur-md border border-blue-shade/30">
+            <div class="flex space-x-6 p-5 justify-around">
+                <a href="#about" class="text-blue-shade hover:text-indigo-700 transition-colors font-semibold px-4 py-3 rounded-xl hover:bg-indigo-100/50">About You</a>
+                <a href="#dogs" class="text-blue-shade hover:text-indigo-700 transition-colors font-semibold px-4 py-3 rounded-xl hover:bg-indigo-100/50">Dogs</a>
+                <a href="#anime" class="text-blue-shade hover:text-indigo-700 transition-colors font-semibold px-4 py-3 rounded-xl hover:bg-indigo-100/50">Anime</a>
+                <a href="Flowerindex.html" class="text-blue-shade hover:text-indigo-700 transition-colors font-semibold px-4 py-3 rounded-xl hover:bg-indigo-100/50">Flowers</a>
+                <a href="letters.html" class="text-blue-shade hover:text-indigo-700 transition-colors font-semibold px-4 py-3 rounded-xl hover:bg-indigo-100/50">Letters</a>
+            </div>
+        </nav>
+        <section id="about" class="mb-12 bg-white/90 backdrop-blur-md rounded-lg shadow-blue-light p-7 border border-blue-shade/30">
+            <h2 class="section-heading">About You</h2>
+            <p class="text-gray-700 text-lg text-center">
+                Hello to my beautiful loviing wife, im sorry pero i lied, may pasok ako pero
+                walang gagawin and tapos ko na mga activties ko so i had time to create this passion
+                project na to.
+                If you're not KR, this is Khryz Ryn "KR" C. Mauri, my wife. She loves dogs, anime, random games na nakikita nya sa internet,
+                shoes, yung friends nya na di jejemon, the color blue, red, green, and silver jewelries, and me syempre alangan.
+            </p>
+            <div class="flex justify-center mt-8">
+                <img src="494689582_700419969189312_8037094571504542189_n.jpg" alt="Your Photo" class="rounded-xl shadow-md border border-blue-shade/30">
+            </div>
+        </section>
+        <section id="dogs" class="mb-12 bg-white/90 backdrop-blur-md rounded-lg shadow-blue-light p-7 border border-blue-shade/30">
+            <h2 class="section-heading">Dogs You Love</h2>
+            <p class="text-gray-700 text-lg text-center mb-6">
+                I know how much you adore your dog, Bandit!
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="game-card">
+                    <img src="496509823_1211787520576733_2546855400464444875_n.jpg" alt="Bandit">
+                    <div class="content">
+                        <h3 class="text-xl font-semibold">Bandit</h3>
+                        <p class="text-gray-600">Your loyal companion.</p>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <img src="496510264_2660039697540627_2652692970891740877_n.jpg" alt="Dog 2">
+                    <div class="content">
+                        <h3 class="text-xl font-semibold">Bandito</h3>
+                        <p class="text-gray-600">Nun puppy pa sya</p>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <img src="494689154_1041250064734122_4147369044808684082_n.jpg" alt="Dog 3">
+                    <div class="content">
+                        <h3 class="text-xl font-semibold">Bundit</h3>
+                        <p class="text-gray-600">Big ass dog</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="anime" class="mb-12 bg-white/90 backdrop-blur-md rounded-lg shadow-blue-light p-7 border border-blue-shade/30">
+            <h2 class="section-heading">Anime You Enjoy</h2>
+            <p class="text-gray-700 text-lg text-center mb-6">
+                Here are some anime that I know you like na may character na pinagseselosan ko.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="game-card">
+                    <img src="solo-leveling-episode-23.jpg" alt="Anime 1">
+                    <div class="content">
+                        <h3 class="text-xl font-semibold">Solo Leveling</h3>
+                        <p class="text-gray-600">di ko kilala yan.</p>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <img src="thumb-1920-135669.jpg" alt="Anime 2">
+                    <div class="content">
+                        <h3 class="text-xl font-semibold">Naruto</h3>
+                        <p class="text-gray-600">di ko kilala din yan.</p>
+                    </div>
+                </div>
+                <div class="game-card">
+                    <img src="efee5857072dc228416058e795c945d8.jpg" alt="Anime 3">
+                    <div class="content">
+                        <h3 class="text-xl font-semibold">1 pis</h3>
+                        <p class="text-gray-600">sino ba to.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <footer class="bg-white/90 backdrop-blur-md py-6 text-center rounded-t-xl border-t border-blue-shade/30">
+        <p class="text-gray-700">&copy; Made with love for my amazing girlfriend. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        const lettersLink = document.getElementById('letters-link');
+        const lettersPage = document.getElementById('letters-page');
+        const closeLettersButton = document.getElementById('close-letters-button');
+        lettersLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            lettersPage.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+        closeLettersButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            lettersPage.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+        onload = () =>{
+                document.body.classList.remove("container");
+        };
+    </script>
+</body>
+</html>

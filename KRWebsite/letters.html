@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="494687378_1045300914158580_1853022652486187137_n.jpg" type="image/jpg">
+    <title>Envelope Letters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f7fa; /* Light blue background */
+        }
+        .envelope {
+            width: 200px;
+            height: 120px;
+            background-color: #f4e3cf;
+            border-radius: 10px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+            border: 1.5px solid #d1c1ad;
+        }
+        .envelope:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-top: 60px solid #e6d0b3;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            transform-origin: top;
+            transition: transform 0.3s ease;
+            border-bottom: none;
+        }
+        .envelope:hover .envelope-flap {
+            transform: rotateX(-180deg);
+        }
+        .letter-content {
+            display: none;
+            padding: 25px;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 30px;
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            border: 1px solid #d1c1ad;
+            text-align: center;
+        }
+        .letter-content h2{
+            color: #1a202c;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        .letter-content p{
+            color: #4a5568;
+            font-size: 1.1rem;
+            line-height: 1.7rem;
+        }
+        .close-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #718096;
+            transition: color 0.2s ease;
+        }
+        .close-button:hover {
+            color: #1a202c;
+        }
+
+        /* New styles for improved envelope appearance */
+        .envelope {
+            /* box-shadow: Deprecated */
+             background: linear-gradient(135deg, #f4e3cf, #e6d0b3); /* Gradient background */
+            border: 1.5px solid #d1c1ad; /* Slightly stronger border */
+        }
+
+        .envelope-flap {
+             border-top-color: #e6d0b3;
+             border-top-left-radius: 12px;
+             border-top-right-radius: 12px;
+             border-bottom: none;
+        }
+
+       .envelope:hover {
+            transform: translateY(-10px) scale(1.08);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .envelope p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a202c;
+            text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
+        }
+
+    </style>
+</head>
+<body class="bg-blue-100 p-6">
+    <div class="flex flex-wrap justify-center">
+        <div class="envelope" data-letter="letter1">
+            <div class="envelope-flap"></div>
+        </div>
+        <div class="envelope" data-letter="letter2">
+            <div class="envelope-flap"></div>
+         
+        </div>
+        <div class="envelope" data-letter="letter3">
+            <div class="envelope-flap"></div>
+          
+        </div>
+ 
+    </div>
+
+    <div id="letter1" class="letter-content">
+        <p>
+            Dear KR,
+
+            I'm really sorry for all the crap I've put us through. Thinking back, I know my mental health stuff has been tough on you, and I'm truly sorry for all the times you got worn out because of it. I'm also really sorry for those times during arguments when I just shut down and couldn't speak. I know that must be frustrating, and it's not fair to you.
+
+            You being there for me, even when I wasn't really there myself, means so much. Seriously, thank you. And I'm sorry if things have felt stuck or stagnant because of me.
+            
+            Those tough times have really made me see things clearer. I'm serious about working on my mental health and on being better at communicating, even when things get tough. I'm gonna try my best to actually talk things through instead of freezing up. You deserve way better than what I've been giving, and I'm gonna make that happen.
+            
+            Thanks for being so strong, so kind, and for loving me even through all this. You're amazing, and I really hope we can move forward in a good way.
+        </p>
+        <p>
+            Love, JD
+        </p>
+        <span class="close-button">&times;</span>
+    </div>
+
+    <div id="letter2" class="letter-content">
+        <p>
+            Dear KR,
+
+Just wanted to say, you're seriously amazing. I don't even know where I'd be without you.
+
+Thanks for always believing in me, especially when I couldn't even believe in myself. Your patience with my mental health stuff has been a lifesaver. You never bailed on me, and that means everything.
+
+I really appreciate how kind and understanding you are. You just get me, even when I can't explain what's going on. Your empathy is the best.
+
+Thanks for celebrating the little wins with me and for being there when things suck. You always know how to make me smile, even on bad days. Just being around you makes things better.
+
+You're so strong and resilient – it really inspires me. You handle everything so well, and it makes me want to be a better me.
+
+Seriously, thank you for just being you. You make my life so much better, just by being in it. I'm so lucky to have you.
+        </p>
+        <p>
+            Love, JD
+        </p>
+        <span class="close-button">&times;</span>
+    </div>
+
+    <div id="letter3" class="letter-content">
+        <p>
+            Can we please continue this Sunday? I'll pay if you don't have money
+        </p>
+        <span class="close-button">&times;</span>
+    </div>
+
+
+    <script>
+       const envelopes = document.querySelectorAll('.envelope');
+        const letters = document.querySelectorAll('.letter-content');
+        const closeButtons = document.querySelectorAll('.close-button');
+
+        envelopes.forEach(envelope => {
+            envelope.addEventListener('click', () => {
+                const letterId = envelope.dataset.letter;
+                const letter = document.getElementById(letterId);
+                letter.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                event.target.parentNode.style.display = 'none';
+                 document.body.style.overflow = '';
+            });
+        });
+
+        document.addEventListener('click', (event) => {
+            letters.forEach(letter => {
+                if (event.target === letter) {
+                    letter.style.display = 'none';
+                     document.body.style.overflow = '';
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
